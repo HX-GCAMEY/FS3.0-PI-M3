@@ -1,0 +1,179 @@
+/* Asegura un modelo de caja consistente para calcular anchos y paddings. */
+* {
+  box-sizing: border-box;
+}
+
+/* Define una base de tamano de fuente para escalar rem de forma predecible. */
+html {
+  font-size: 16px;
+}
+
+/* Configura el lienzo principal de la pagina y aplica tema tipografico y colores. */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 1rem;
+  overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Evita espacios inline en imagenes y previene desbordes horizontales. */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Crea la tarjeta contenedora con borde, fondo y espaciado interno. */
+.card {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+}
+
+/* Define tamano y recorte circular para el avatar, centrado en la tarjeta. */
+.card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+/* Da separacion y alineacion centrada al nombre del perfil. */
+.card__name {
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+/* Diferencia visualmente el rol con color secundario y espaciado inferior. */
+.card__role {
+  margin: 0 0 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Mantiene aire visual debajo de la descripcion para separar secciones. */
+.card__bio {
+  margin: 0 0 1rem;
+}
+
+/* Organiza las estadisticas en columna para pantallas pequenas. */
+.card__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Estiliza cada bloque de metrica como tarjeta secundaria. */
+.stat {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg-secondary);
+}
+
+/* Resalta el valor numerico de cada estadistica. */
+.stat__value {
+  display: block;
+  font-weight: 700;
+}
+
+/* Usa un tono mas suave para la etiqueta descriptiva de la metrica. */
+.stat__label {
+  color: var(--text-secondary);
+}
+
+/* Apila acciones verticalmente para mejor tactilidad en mobile. */
+.card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Establece base comun de botones con area minima tactil y tipografia heredada. */
+.btn {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.625rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Marca la accion principal con color de llamada fuerte. */
+.btn--primary {
+  background: var(--primary);
+  color: var(--text-primary);
+}
+
+/* Da feedback visual al pasar el mouse sobre la accion principal. */
+.btn--primary:hover {
+  background: var(--primary-hover);
+}
+
+/* Presenta accion secundaria con estilo de contorno para menor jerarquia. */
+.btn--secondary {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent-bright);
+}
+
+/* Ajusta espaciados y distribucion para tablet, ganando aire y equilibrio. */
+@media (min-width: 768px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card__avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card__stats {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .stat {
+    flex: 1;
+  }
+
+  .card__actions {
+    flex-direction: row;
+  }
+}
+
+/* Refina composicion en desktop: centra card y compacta acciones en fila. */
+@media (min-width: 1024px) {
+  body {
+    padding: 2rem;
+  }
+
+  .card {
+    max-width: 32rem;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .card__actions {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: auto;
+    min-width: 8rem;
+  }
+}

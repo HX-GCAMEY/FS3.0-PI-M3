@@ -1,0 +1,13 @@
+/* Define la paleta base que usara todo el tema de la interfaz. */
+:root {
+  --bg-primary: #120A1F;
+  --bg-secondary: #1B1230;
+  --surface: #261A40;
+  --primary: #6D3FB2;
+  --primary-hover: #8456D6;
+  --accent: #C15CFF;
+  --accent-bright: #8EF6FF;
+  --text-primary: #F3EEFF;
+  --text-secondary: #B8A9D6;
+  --border: #3A2A5C;
+}
